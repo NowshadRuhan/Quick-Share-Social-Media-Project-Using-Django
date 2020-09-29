@@ -3,3 +3,6 @@
 
 
 ![Quick-Share-Profile](https://github.com/NowshadRuhan/Quick-Share-Social-Media-Project-Using-Django/blob/master/Quick-Share%20Profile.png?raw=true) 
+
+## About Project:
+**In this project i used  two apps, media folder, static folder, templates and others pip library/packages.**
