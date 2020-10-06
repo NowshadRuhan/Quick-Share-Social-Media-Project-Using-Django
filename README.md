@@ -69,7 +69,7 @@ urlpatterns = [
 ### About Static File in Django:
 In static folder we store our all of css, js, bootstrap file to use those file in our project.
 
-**settings added**
+**Settings added**
 ```
 from django.conf import settings
 ```
