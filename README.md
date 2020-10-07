@@ -25,7 +25,7 @@ INSTALLED_APPS = (
     'crispy_forms',
 )
 ```
-**For add template packs within django-crispy-forms:**
+**For add template packs within django-crispy-forms: **
 
 ```
 #bootstrap, bootstrap3, bootstrap4, uni-from
