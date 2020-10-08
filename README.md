@@ -92,5 +92,6 @@ from django.conf.urls.static import static
       - And then also create another model which is follow. This model control peoples follower and following part.
       - ### App-login forms:
             - I used two django provided forms those are UserCreationForm and AuthenticationForm.
-            -
+            - Using this two forms and my UserProfile model i create three forms for app-login.
+            - Those are CreateNewUser, UserLoginForm and UserProfileForm.
    
