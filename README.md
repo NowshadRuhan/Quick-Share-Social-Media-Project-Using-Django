@@ -90,7 +90,7 @@ from django.conf.urls.static import static
    1. App-login :
       - In app login i create one custom model which is connected to Django provided User model in One-To-One connection. And this model used for signup and user- profile part also. The model name is UserProfile.
       - And then also create another model which is follow. This model control peoples follower and following part.
-      - ### App-login forms:
+      - #### App-login forms:
             - I used two django provided forms those are UserCreationForm and AuthenticationForm.
             - Using this two forms and my UserProfile model i create three forms for app-login.
             - Those are CreateNewUser, UserLoginForm and UserProfileForm.
