@@ -94,4 +94,16 @@ from django.conf.urls.static import static
             - I used two django provided forms those are UserCreationForm and AuthenticationForm.
             - Using this two forms and my UserProfile model i create three forms for app-login.
             - Those are CreateNewUser, UserLoginForm and UserProfileForm.
-   
+   2. App-Post :
+      - In app post i used two custom model for create Posts orbject and Liker object.
+      - #### Relationship:
+            - User model and Post model (One TO Many).
+            - User model and Like model (One To Many).
+            - Post and Like model (One To Many).
+      - #### App-Post forms :
+            - I used PostForm form as a custom form of Post model.
+     
+      
+      
+      
+      
