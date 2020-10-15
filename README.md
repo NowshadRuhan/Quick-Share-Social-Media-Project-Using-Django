@@ -107,7 +107,13 @@ from django.conf.urls.static import static
 ## Quick-Share-Social-Media signup:  :smile:
 ![Travel-Book-Blog-Home](https://github.com/NowshadRuhan/Quick-Share-Social-Media-Project-Using-Django/blob/master/Signup.png?raw=true) 
 
+
+
 ## Quick-Share-Social-Media Sign-In:  :smile:
 ![Travel-Book-Blog-Home](https://github.com/NowshadRuhan/Quick-Share-Social-Media-Project-Using-Django/blob/master/login.png?raw=true)    
+
+
+## Quick-Share-Social-Media Post:  :smile:
+![Travel-Book-Blog-Home](https://github.com/NowshadRuhan/Quick-Share-Social-Media-Project-Using-Django/blob/master/post.png?raw=true)    
       
       
