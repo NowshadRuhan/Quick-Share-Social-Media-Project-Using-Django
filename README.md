@@ -116,4 +116,5 @@ from django.conf.urls.static import static
 ## Quick-Share-Social-Media Post:  :smile:
 ![Travel-Book-Blog-Home](https://github.com/NowshadRuhan/Quick-Share-Social-Media-Project-Using-Django/blob/master/post.png?raw=true)    
       
-      
+
+**This all about this project, carry on developement. Be happy and stay safe.** :sunglasses:
