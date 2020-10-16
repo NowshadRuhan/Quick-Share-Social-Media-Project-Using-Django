@@ -1,0 +1,255 @@
+{% extends 'navber.html' %}
+{% load crispy_forms_tags %}
+{% block title_blog %} {{ user.user_profile.user_full_name }} {{ title }} {% endblock %}
+{% block css_block %}
+<style>
+.posts-img{
+  border-radius:10px;
+  border:2px solid gray;
+}
+.posts-date{
+  font-style: blod;
+  font-size:10px;
+  margin-top:-14px;
+  border-bottom: 1px solid black!important;
+}
+.user-name{
+  font-style:italic;
+  font-size:16px;
+}
+.caption{
+  font-size:15px;
+  font-style:bold;
+}
+</style>
+{% endblock %}
+
+
+{% block body_block %}
+
+    <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
+                </li> -->
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h5 class="mb-3">{{ user.user_profile.user_full_name }} | Profile</h5>
+
+                    <p class="mb-4" style="font-style: italic;">{{ user.user_profile.description|linebreaks }}</p>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h6>Username</h6>
+                            <p>
+                              {% if user.username %}
+                                  {{ user.username }}
+                              {% else %}
+
+                              {% endif %}
+                            </p>
+                            <h6>Date of birth</h6>
+                            <p>
+                              {% if user.user_profile.dob %}
+                                  {{ user.user_profile.dob }}
+                              {% else %}
+
+                              {% endif %}
+
+                            </p>
+                        </div>
+
+
+
+                       <div class="col-md-3" align="center">
+                         <h6>Posts</h6>
+                         <h5 style='font-size:24px;'><span class="badge badge-success"><i class="fa fa-clipboard"></i>&nbsp;&nbsp;
+                               {{ user.user_post.count }}
+                         </span></h5>
+                       </div>
+
+                       <div class="col-md-3" align="center">
+                         <h6>Followers</h6>
+                         <h5 style='font-size:24px;'><span class="badge badge-info"><i class="fa fa-users"></i>&nbsp;&nbsp;
+                               {{ user.following.count }}
+                         </span></h5>
+                       </div>
+
+                       <div class="col-md-3" align="center">
+                         <h6>Following</h6>
+                         <h5 style='font-size:24px;'><span class="badge badge-info"><i class="fa fa-usb"></i>&nbsp;&nbsp;
+                               {{ user.follower.count }}
+                         </span></h5>
+                       </div>
+
+                            <!--<a href="#" class="badge badge-dark badge-pill">codeply</a>
+                            <a href="#" class="badge badge-dark badge-pill">angularjs</a>
+                            <a href="#" class="badge badge-dark badge-pill">css3</a>
+                            <a href="#" class="badge badge-dark badge-pill">jquery</a>
+                            <a href="#" class="badge badge-dark badge-pill">bootstrap</a>
+                            <a href="#" class="badge badge-dark badge-pill">responsive-design</a>
+                            <hr>
+                            <span class="badge badge-primary"><i class="fa fa-user"></i> 900 Followers</span>
+                            <span class="badge badge-success"><i class="fa fa-cog"></i> 43 Forks</span>
+                            <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span> -->
+
+                        <div class="col-md-12">
+                            <h5 class="mt-2"> About others</h5>
+                            <table class="table table-sm table-hover table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Address: </strong>
+                                            {% if user.user_profile.address %}
+                                                {{ user.user_profile.address }}
+                                            {% else %}
+
+                                            {% endif %}
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Website like: </strong> <a href="
+                                            {% if user.user_profile.website %}
+                                                {{ user.user_profile.website }}
+                                            {% else %}
+                                                #
+                                            {% endif %}
+                                            "> Click here</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Facebook like: </strong> <a href="
+                                            {% if user.user_profile.facebook %}
+                                                {{ user.user_profile.facebook }}
+                                            {% else %}
+                                                #
+                                            {% endif %}
+                                            "> Click here</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <a class="btn btn-info" style="width:100%" href="{% url 'App_login:editProfile' %}"> Edit Profile</a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/row-->
+                </div>
+                <!-- <div class="tab-pane" id="messages">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a> This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                    </div>
+                    <table class="table table-hover table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">3 hrs ago</span> Here is your a link to the latest summary report from the..
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+
+            </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 text-center">
+          {% if user.user_profile.profile_pic %}
+              <img src="/media/{{ user.user_profile.profile_pic }}" class="mx-auto img-fluid img-circle d-block rounded-circle" alt="avatar">
+          {% else %}
+              <img src="/media/demo1.png"  class="mx-auto img-fluid img-circle d-block rounded-circle" alt="avatar">
+          {% endif %}
+
+            <h4 class="mt-5">{{ user.user_profile.user_full_name }}</h4>
+            <!-- <label class="custom-file">
+                <input type="file" id="file" class="custom-file-input">
+                <span class="custom-file-control">Choose file</span>
+            </label> -->
+            <hr>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+              New Post
+            </button>
+        </div>
+    </div>
+<hr>
+
+
+{% for post in user.user_post.all %}
+<div class="row  my-2">
+
+  <div class="col-md-3">
+  </div>
+    <div class="col-md-6" align="left">
+      <h5 class="mb-3 user-name">{{ user.user_profile.user_full_name }}
+      <br><span class="mb-4 posts-date"  width="100%" >
+        {{ post.upload_date }}
+      </span>
+      </h5>
+      <h5 class="caption">{{ post.caption }}</h5>
+
+      <img width="100%" class="posts-img" src="/media/{{ post.image }}" alt="no image">
+    </div>
+  <div class="col-md-3">
+  </div>
+</div>
+<hr><br>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">What's Your Mind!</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" align="left">
+        <form  method="POST" enctype="multipart/form-data">
+
+          {{ form|crispy }}
+          {% csrf_token %}
+          <input type="submit" class="btn btn-primary" style="width:100%" name="submit" value="submit">
+
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

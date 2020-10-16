@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <!-- for responcive in device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/media/logo.png">
+
+
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+
+
+  <!-- jQuery library -->
+  <script src="{% static "js/jquery.min.js" %}"></script>
+  <!-- Popper JS -->
+  <script src="{% static "js/popper.min.js" %}"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+  <!-- for table search  -->
+  <script src="{% static "js/datatables.min.js" %}"></script>
+  <script src="{% static "js/datatables.min.js.map" %}"></script>
+  <script src="{% static "js/datatables-select.min.js" %}"></script>
+  <script src="{% static "js/datatables-select.min.js.map" %}"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>{% block title_blog %} | Socal Media {% endblock %}</title>
+
+  {% block css_block %}
+  {% endblock %}
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="/media/logo.png" alt="" style="max-width:50px; max-height:30px;">
+      </a>
+     <button style="border:2px solid #22A3D5;" class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span style="color: #22A3D5; border:none;"><i class="fa fa-sliders-h"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="{% url 'App_login:signup' %}">Sign-Up</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" style="color:white;" href="{% url 'App_login:signin' %}">Sign-In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+<div class="container" style="padding:20px;" align='center'>
+{% block body_block %}
+
+{% endblock %}
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small blue" style="background-color:#454745;">
+  <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+    <a href="https://github.com/NowshadRuhan" style="color:white"> Nowshad-Ruhan</a>
+  </div>
+</footer>
+<!-- Footer -->
+</body>
+</html>
+<script type="text/javascript">
+$(document).ready(function () {
+$('#dtBasicExample').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
+</script>
+
+
+
+
+
+<!-- <script src="{% static "js/bootstrap.js" %}"></script>
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/mdb.js" %}"></script>
+<script src="{% static "js/mdb.lite.min.js.map" %}"></script>
+<script src="{% static "js/mdb.min.js" %}"></script>
+<script src="{% static "js/mdb.min.js.map" %}"></script>
+<script src="{% static "js/popper.js" %}"></script> -->
+
+<!-- <script src="{% static "js/directives.min.js" %}"></script>
+<script src="{% static "js/directives.min.js.map" %}"></script>
+<script src="{% static "js/flag.min.js" %}"></script>
+<script src="{% static "js/flag.min.js.map" %}"></script>
+<script src="{% static "js/imagesloaded.pkgd.min.js" %}"></script>
+<script src="{% static "js/imagesloaded.pkgd.min.js.map" %}"></script>
+<script src="{% static "js/jquery.zmd.hierarchical-display.min.js" %}"></script>
+<script src="{% static "js/jquery.zmd.hierarchical-display.min.js.map" %}"></script>
+<script src="{% static "js/masonry.pkgd.min.js" %}"></script>
+<script src="{% static "js/masonry.pkgd.min.js.map" %}"></script>
+
+<script src="{% static "js/rating.min.js" %}"></script>
+<script src="{% static "js/rating.min.js.map" %}"></script> -->

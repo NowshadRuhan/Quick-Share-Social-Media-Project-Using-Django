@@ -1,0 +1,29 @@
+{% extends 'navber.html' %}
+{% load crispy_forms_tags %}
+{% block title_blog %} {{ title }} {% endblock %}
+{% block css_block %}
+<style>
+  .sign_up{
+    width:70%;
+    border:1px solid #ccc;
+    border-radius:5px;
+    padding:30px;
+  }
+</style>
+{% endblock %}
+
+
+{% block body_block %}
+
+<div class="sign_up" align="left">
+  <h2 align='left'><b>Edit Your Profile </b></h2>
+  <form  method="POST" enctype="multipart/form-data">
+
+    {{ form|crispy }}
+    {% csrf_token %}
+    <input type="submit" class="btn btn-primary" style="width:100%" name="submit" value="Edit Profile">
+
+  </form>
+</div>
+
+{% endblock %}
